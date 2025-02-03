@@ -1,8 +1,10 @@
 ---
-import HelloComponent from '@components/hello.component';
+import { HeroComponent } from '@components/hero.component';
 import Layout from '@layout/Layout.astro';
 ---
 
 <Layout>
-  <HelloComponent client:visible />
+  <main>
+    <HeroComponent client:visible />
+  </main>
 </Layout>
