@@ -1,18 +1,16 @@
-import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 
-import Subtitle from '../assets/images/hero-subtitle.webp';
-import HeroImg from '../assets/images/hero.webp';
+import Subtitle from '@assets/images/hero-subtitle.webp';
+import HeroImg from '@assets/images/hero.webp';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgStyle],
   template: `
     <article
-      class="hero h-screen p-4 md:p-8 bg-cover bg-center bg-no-repeat"
-      [ngStyle]="{
-        backgroundImage: 'url(' + HeroImg + ')',
+      class="hero h-dvh min-h-[600px] p-4 md:p-8 bg-cover bg-center bg-no-repeat"
+      [style]="{
+        backgroundImage: 'url(' + HERO_IMG + ')',
       }"
     >
       <section
@@ -67,10 +65,10 @@ import HeroImg from '../assets/images/hero.webp';
           </section>
 
           <a
-            [href]="APPLY_LINK"
-            rel="noreferrer"
-            rel="noopener"
+            target="_blank"
+            rel="noopener noreferrer"
             class="border-2 border-[#FCEE0A] rounded-4xl py-3 px-10 bg-[#17171799] hover:bg-[#FCEE0A] hover:text-black hover:border-black transition-all duration-300 ease-in-out"
+            [href]="APPLY_LINK"
           >
             {{ APPLY_LABEL }}
           </a>
@@ -93,13 +91,12 @@ import HeroImg from '../assets/images/hero.webp';
     }
   `,
 })
-export class HeroComponent {
-  protected readonly EVENT_LOCATION: string = 'Cochabamba - Bolivia';
-  protected readonly EVENT_DATE: string = '22 de Febrero, 2025';
-  protected readonly APPLY_LABEL: string = 'APLICAR AL EVENTO';
-  protected readonly EVENT_NAME: string = 'NG | INIT';
-  protected readonly APPLY_LINK: string = '#';
-
-  protected readonly HERO_SUBTITLE: string = Subtitle.src;
-  protected readonly HeroImg: string = HeroImg.src;
+export default class HeroComponent {
+  readonly EVENT_LOCATION = 'Universidad Católica, Cochabamba - Bolivia';
+  readonly EVENT_DATE = '22 de Febrero, 2025';
+  readonly APPLY_LABEL = 'APLICAR AL EVENTO';
+  readonly EVENT_NAME = 'NG | INIT';
+  readonly APPLY_LINK = '#';
+  readonly HERO_SUBTITLE = Subtitle.src;
+  readonly HERO_IMG = HeroImg.src;
 }
