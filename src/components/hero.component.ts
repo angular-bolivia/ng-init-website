@@ -96,7 +96,7 @@ export default class HeroComponent {
   readonly EVENT_DATE = '22 de Febrero, 2025';
   readonly APPLY_LABEL = 'APLICAR AL EVENTO';
   readonly EVENT_NAME = 'NG | INIT';
-  readonly APPLY_LINK = '#';
+  readonly APPLY_LINK = 'https://forms.gle/wz6cGmHGjt2dweAcA';
   readonly HERO_SUBTITLE = Subtitle.src;
   readonly HERO_IMG = HeroImg.src;
 }
