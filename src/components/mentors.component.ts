@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-mentors',
   standalone: true,
   template: `
-    <section class="py-16 px-4 bg-gray-900 text-white">
+    <section id="mentors" class="py-16 px-4 bg-gray-900 text-white">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-4xl font-bold mb-6">{{ TITLE }}</h2>
