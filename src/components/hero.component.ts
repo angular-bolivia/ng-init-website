@@ -8,7 +8,7 @@ import HeroImg from '@assets/images/hero.webp';
   standalone: true,
   template: `
     <article
-      class="hero h-dvh min-h-[600px] p-4 md:p-8 bg-cover bg-center bg-no-repeat"
+      class="hero h-dvh min-h-[600px] p-4 md:p-8 bg-cover bg-center bg-no-repeat relative after:content-[''] after:absolute after:inset-0 after:z-[1] after:bg-gradient-to-b after:from-[rgba(107,9,141,0.8)] after:via-[rgba(0,31,33,0.6)] after:to-[rgba(3,24,57,0.7)]"
       [style]="{
         backgroundImage: 'url(' + HERO_IMG + ')',
       }"
@@ -75,20 +75,6 @@ import HeroImg from '@assets/images/hero.webp';
         </section>
       </section>
     </article>
-  `,
-  styles: `
-    .hero:after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        180deg,
-        rgba(107, 9, 141, 0.8) 18.5%,
-        rgba(0, 31, 33, 0.6) 54%,
-        rgba(3, 24, 57, 0.7) 100%
-      );
-    }
   `,
 })
 export default class HeroComponent {
