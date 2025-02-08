@@ -1,4 +1,5 @@
 ---
+import { AboutUsComponent } from '@components/about-us.component';
 import HeroComponent from '@components/hero.component';
 import MentorsComponent from '@components/mentors.component';
 import Layout from '@layout/Layout.astro';
@@ -8,5 +9,6 @@ import Layout from '@layout/Layout.astro';
   <main>
     <HeroComponent client:visible />
     <MentorsComponent client:visible />
+    <AboutUsComponent client:visible />
   </main>
 </Layout>
