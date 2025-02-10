@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import CardBlogComponent from './card-blog.component';
 import CodeOfConductImg from '@assets/images/code-of-conduct.webp';
-import TutorialImg from '@assets/images/tutorial.webp';
 import PromptIcon from '@assets/icons/prompt-icon.svg';
 
 @Component({
@@ -31,19 +30,12 @@ import PromptIcon from '@assets/icons/prompt-icon.svg';
           [time]="CODE_OF_CONDUCT_TIME"
           [link]="CODE_OF_CONDUCT_LINK"
         ></app-card-blog>
-
-        <app-card-blog
-          [title]="TUTORIAL"
-          [content]="TUTORIAL_CONTENT"
-          [image]="TUTORIAL_IMAGE"
-          [time]="TUTORIAL_TIME"
-        ></app-card-blog>
       </section>
     </article>
   `,
 })
 export default class BlogComponent {
-  protected readonly TITLE: string = 'Blog y tutoriales';
+  protected readonly TITLE: string = 'Blog';
   protected readonly CODE_OF_CONDUCT: string = 'Codigo de conducta';
   protected readonly CODE_OF_CONDUCT_CONTENT: string =
     'Explora el código de conducta del día del evento.';
@@ -52,9 +44,4 @@ export default class BlogComponent {
   protected readonly CODE_OF_CONDUCT_TIME: string = '7 min read';
   protected readonly PROMPT_ICON_IMG: string = PromptIcon.src;
   protected readonly CODE_OF_CONDUCT_LINK: string = '/blogs/code-of-conduct';
-  protected readonly TUTORIAL: string = 'Tutorial NG | INIT';
-  protected readonly TUTORIAL_CONTENT: string = 'Proximamente...';
-  protected readonly TUTORIAL_IMAGE: string = TutorialImg.src;
-  protected readonly TUTORIAL_TIME: string = '7 min read';
-  protected readonly TUTORIAL_LINK: string = '/';
 }
