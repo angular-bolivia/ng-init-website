@@ -3,6 +3,7 @@ import { AboutUsComponent } from '@components/about-us.component';
 import HeroComponent from '@components/hero.component';
 import MentorsComponent from '@components/mentors.component';
 import Layout from '@layout/Layout.astro';
+import { FooterComponent } from '@components/footer.component';
 ---
 
 <Layout>
@@ -10,5 +11,6 @@ import Layout from '@layout/Layout.astro';
     <HeroComponent client:visible />
     <AboutUsComponent client:visible />
     <MentorsComponent client:visible />
+    <FooterComponent client:visible />
   </main>
 </Layout>
