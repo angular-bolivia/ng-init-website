@@ -16,74 +16,56 @@ import EmailLogo from '@assets/images/email-logo.svg';
         <div class="flex flex-col md:flex-row md:justify-between gap-12">
           <div class="flex flex-col md:items-start gap-4">
             <div class="flex flex-row items-center gap-4">
-              <img [src]="ANGULAR_WHITE" alt="Logo de Angular" />
+              <img [src]="ANGULAR_WHITE" [alt]="IMAGE_ALT_TEXT.ANGULAR" />
               <h2 class="text-[#FFFFFF] text-2xl font-bold">{{
                 EVENT_TITLE
               }}</h2>
             </div>
             <p class="text-left md:text-left max-w-md text-[#8E9196]">
-              Empoderamos a la próxima generación de innovadores tecnológicos a
-              través de tutoría, recursos y desarrollo de comunidades.
+              {{ DESCRIPTION }}
             </p>
           </div>
           <div class="flex flex-col items-center gap-2">
-            <p class="text-xl" style="font-family: 'Inter Tight', sans-serif;"
-              >Organizado por:</p
+            <p class="text-xl">Organizado por:</p>
+            <a
+              [href]="ANGULAR_BOLIVIA_LINK"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-            <img [src]="ANGULAR_BOLIVIA" alt="Angular Bolivia" width="240px" />
+              <img
+                [src]="ANGULAR_BOLIVIA"
+                [alt]="IMAGE_ALT_TEXT.ANGULAR_BOLIVIA"
+                width="240px"
+              />
+            </a>
             <div class="flex items-center gap-8 mt-4 md:mt-6 md:gap-12">
-              <a
-                href="https://github.com/angular-bolivia"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  [src]="GITHUB_LOGO"
-                  width="24"
-                  height="24"
-                  alt="Logo de Github"
-                />
-              </a>
-              <a
-                href="https://x.com/angularBolivia"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img [src]="X_LOGO" width="20" height="20" alt="Logo de X" />
-              </a>
-              <a href="mailto:angularbolivia@gmail.com">
-                <img
-                  [src]="EMAIL_LOGO"
-                  width="20"
-                  height="20"
-                  alt="Logo de Email"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/angular-bolivia/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  [src]="LINKEDIN_LOGO"
-                  width="20"
-                  height="20"
-                  alt="Logo de Linkedin"
-                />
-              </a>
+              @for (social of SOCIAL_MEDIA_LINKS; track social.link) {
+                <a
+                  [href]="social.link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <img
+                    [src]="social.src"
+                    [width]="social.link.includes('github') ? '24' : '20'"
+                    [height]="social.link.includes('github') ? '24' : '20'"
+                    [alt]="social.alt"
+                  />
+                </a>
+              }
             </div>
           </div>
         </div>
         <div class="mt-12 pt-8 border-t border-[#414142]">
           <p class="text-center text-sm text-[#F2F2F2]">
-            © 2025 NG | INIT. Todos los derechos reservados
+            {{ COPYRIGHT }}
           </p>
         </div>
       </div>
     </footer>
   `,
 })
-export class FooterComponent {
+export default class FooterComponent {
   protected readonly ANGULAR_WHITE = AngularWhite.src;
   protected readonly ANGULAR_BOLIVIA = AngularBolivia.src;
   protected readonly GITHUB_LOGO = GithubLogo.src;
@@ -91,4 +73,41 @@ export class FooterComponent {
   protected readonly EMAIL_LOGO = EmailLogo.src;
   protected readonly LINKEDIN_LOGO = LinkedinLogo.src;
   protected readonly EVENT_TITLE = 'NG | INIT';
+  protected readonly COPYRIGHT =
+    '© 2025 NG | INIT. Todos los derechos reservados';
+  protected readonly DESCRIPTION =
+    'Empoderamos a la próxima generación de innovadores tecnológicos a través de tutoría, recursos y desarrollo de comunidades.';
+  protected readonly ANGULAR_BOLIVIA_LINK = 'https://ng.com.bo/';
+
+  protected readonly IMAGE_ALT_TEXT = {
+    ANGULAR: 'Logo de Angular',
+    ANGULAR_BOLIVIA: 'Angular Bolivia',
+    GITHUB: 'Logo de Github',
+    X: 'Logo de X',
+    EMAIL: 'Logo de Email',
+    LINKEDIN: 'Logo de Linkedin',
+  } as const;
+
+  protected readonly SOCIAL_MEDIA_LINKS = [
+    {
+      link: 'https://github.com/angular-bolivia',
+      alt: this.IMAGE_ALT_TEXT.GITHUB,
+      src: this.GITHUB_LOGO,
+    },
+    {
+      link: 'https://x.com/angularBolivia',
+      alt: this.IMAGE_ALT_TEXT.X,
+      src: this.X_LOGO,
+    },
+    {
+      link: 'mailto:angularbolivia@gmail.com',
+      alt: this.IMAGE_ALT_TEXT.EMAIL,
+      src: this.EMAIL_LOGO,
+    },
+    {
+      link: 'https://www.linkedin.com/company/angular-bolivia/',
+      alt: this.IMAGE_ALT_TEXT.LINKEDIN,
+      src: this.LINKEDIN_LOGO,
+    },
+  ];
 }
