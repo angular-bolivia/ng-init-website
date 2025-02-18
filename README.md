@@ -45,3 +45,16 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Coding Style
+
+- We should use one-file per component, unless we need to add custom styles, this should go in a different file.
+- If using custom styles, follow [BEM](https://getbem.com/naming/) and make sure to encapsulate them.
+- We use [Prettier](https://prettier.io) to keep code style consistent.
+- Use `export default` to export components, so that we have only one export per file.
+- Use `protected` for class properties that need to be bound only in the template (i.e. `protected name = 'Joe'`).
+- Use `private` for class properties that are only used in the class (i.e. `#name = 'Joe'`).
+- Use `public` for class properties that are used outside the class and the template (i.e. `name = 'Joe'`).
+- If type is not inferred, we need to add it explicitly (i.e. `#randomProperty: SomeType = { a: 0 }`).
+- If type is already inferred, there's no need to add the type explicitly (i.e. `#name = 'Joe'`).
+- By default, all properties should be `readonly`, unless it is strictly necessary to change them.

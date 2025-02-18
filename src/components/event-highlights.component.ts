@@ -66,9 +66,5 @@ export default class EventHighlightsComponent {
       description:
         ' Conéctate con otros apasionados y profesionales del sector.',
     },
-    {
-      title: 'Completamente gratuito',
-      description: 'Abierto para todos los que quieran aprender.',
-    },
   ];
 }

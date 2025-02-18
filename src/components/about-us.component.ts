@@ -19,12 +19,12 @@ import AngularBolivia from '@assets/images/angular-bolivia.webp';
         <section class="max-w-[1100px] flex flex-col gap-8 md:gap-16">
           <p class="leading-[36px]">
             <strong class="text-[#00F0FF]">NG Init</strong> es un workshop
-            gratuito y práctico de
-            <strong class="text-[#D946EF]">Angular</strong>, diseñado para
-            estudiantes y personas interesadas en adentrarse en el mundo del
-            desarrollo web moderno. Nuestra misión es brindar una experiencia de
-            aprendizaje interactiva y dinámica, donde los participantes puedan
-            construir sus primeras aplicaciones con la guía de
+            práctico de <strong class="text-[#D946EF]">Angular</strong>,
+            diseñado para estudiantes y personas interesadas en adentrarse en el
+            mundo del desarrollo web moderno. Nuestra misión es brindar una
+            experiencia de aprendizaje interactiva y dinámica, donde los
+            participantes puedan construir sus primeras aplicaciones con la guía
+            de
             <strong class="text-[#00F0FF]"
               >mentores expertos de toda Bolivia</strong
             >.
