@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import AngularBolivia from '@assets/images/angular-bolivia.webp';
 import AngularWhite from '@assets/images/angular-white-logo.webp';
-import XLogo from '@assets/images/x-logo.svg';
+import XLogo from '@assets/images/x-logo-white.svg';
 import LinkedinLogo from '@assets/images/linkedin-logo.svg';
 import GithubLogo from '@assets/images/github-logo.svg';
 import EmailLogo from '@assets/images/email-logo.svg';
@@ -74,7 +74,7 @@ export default class FooterComponent {
   protected readonly LINKEDIN_LOGO = LinkedinLogo.src;
   protected readonly EVENT_TITLE = 'NG | INIT';
   protected readonly COPYRIGHT =
-    '© 2025 NG | INIT. Todos los derechos reservados';
+    '© 2025 NG | INIT. Todos los derechos reservados.';
   protected readonly DESCRIPTION =
     'Empoderamos a la próxima generación de innovadores tecnológicos a través de tutoría, recursos y desarrollo de comunidades.';
   protected readonly ANGULAR_BOLIVIA_LINK = 'https://ng.com.bo/';
