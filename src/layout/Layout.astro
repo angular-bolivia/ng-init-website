@@ -1,4 +1,5 @@
 ---
+import NavbarComponent from '@components/navbar.component';
 import '@styles/global.css';
 ---
 
@@ -32,6 +33,7 @@ import '@styles/global.css';
     <meta name="generator" content={Astro.generator} />
   </head>
   <body>
+    <NavbarComponent client:load />
     <slot />
   </body>
 </html>

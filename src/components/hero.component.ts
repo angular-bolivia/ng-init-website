@@ -8,7 +8,7 @@ import HeroImg from '@assets/images/hero.webp';
   standalone: true,
   template: `
     <article
-      class="hero h-dvh min-h-[600px] p-4 md:p-8 bg-cover bg-center bg-no-repeat relative after:content-[''] after:absolute after:inset-0 after:z-[1] after:bg-gradient-to-b after:from-[rgba(107,9,141,0.8)] after:via-[rgba(0,31,33,0.6)] after:to-[rgba(3,24,57,0.7)]"
+      class="h-dvh min-h-[600px] p-4 md:p-8 bg-cover bg-center bg-no-repeat relative after:content-[''] after:absolute after:inset-0 after:z-[1] after:bg-gradient-to-b after:from-[rgba(107,9,141,0.8)] after:via-[rgba(0,31,33,0.6)] after:to-[rgba(3,24,57,0.7)]"
       [style]="{
         backgroundImage: 'url(' + HERO_IMG + ')',
       }"
@@ -32,8 +32,6 @@ import HeroImg from '@assets/images/hero.webp';
             stroke-width="2"
           />
         </svg>
-
-        <!-- TODO: insert navbar -->
 
         <header
           class="relative z-[3] h-full items-center justify-end flex flex-col gap-6"
