@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from 'astro/config';
 
 import analogjsangular from '@analogjs/astro-angular';
 import tailwindcss from '@tailwindcss/vite';
@@ -10,4 +10,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [analogjsangular()],
+  image: {
+    service: sharpImageService(),
+  },
 });
