@@ -1,5 +1,5 @@
 ---
-title: Presupuesto y saldo
+title: Presupuesto
 author: Angular Bolivia
 description: Para controlar nuestros gastos es importante saber cuál es nuestro presupuesto y cuál sería nuestro saldo.
 order: 11
