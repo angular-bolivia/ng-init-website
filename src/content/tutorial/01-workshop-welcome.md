@@ -13,41 +13,46 @@ nextStep: '02-workshop-angular'
 
 ---
 
-En este tutorial, te llevaremos de viaje a las entrañas de la tecnología web, para que veas todas las piezas que se necesitan para construir una web funcional.
+En este tutorial, te guiaremos paso a paso en tu viaje para convertirte en desarrollador(a) Angular. Aprenderás desde los conceptos básicos hasta cómo construir tu primera aplicación web moderna usando una de las tecnologías más demandadas en el mercado.
 
-Como pasa con todas las cosas nuevas va a ser una aventura, diviértete, una vez que te has decidido a empezar, te va a ir fenomenal :)
+Como todo nuevo aprendizaje, será una aventura emocionante. No te preocupes si al principio algunos conceptos parecen desafiantes - ¡todos empezamos desde cero! Lo importante es mantener la curiosidad y las ganas de aprender. 😊
 
 ---
 
 ## 1. Introducción
 
-¿Alguna vez has tenido la sensación de que el mundo es cada vez más tecnológico? ¿Qué cada vez lo entiendes menos? ¿Alguna vez te has planteado crear un sitio web pero no sabías por dónde empezar? ¿Has pensado alguna vez que el mundo del software es demasiado complicado como para intentar hacer algo por tu cuenta?
+¿Te has preguntado cómo se construyen las aplicaciones web modernas que usas todos los días? ¿Has querido crear tu propia aplicación web pero no sabías por dónde empezar? ¿Has escuchado sobre Angular pero te parece muy complejo?
 
-Bueno, ¡tenemos buenas noticias!, programar no es tan difícil como parece y queremos demostrarte lo divertido que puede llegar a ser!
+¡Tenemos excelentes noticias! Desarrollar con Angular es más accesible de lo que piensas, y estamos aquí para demostrártelo paso a paso.
 
-Este tutorial no te convertirá en un(a) programador(a) de la noche a la mañana, pero será un gran comienzo. Si quieres ser un(a) profesional necesitarás meses o incluso años de aprendizaje y práctica. Sin embargo, queremos enseñarte que programar o crear sitios web no es tan complicado como parece, intentaremos explicarte las cosas lo mejor que podamos para perderle el miedo a la tecnología.
-
-¡Esperamos conseguir que te guste la tecnología!
+Este tutorial está diseñado especialmente para principiantes. No asumimos ningún conocimiento previo en desarrollo web o programación. Nuestro objetivo es que te familiarices con Angular de una manera práctica y amigable, construyendo algo real desde el primer día.
 
 ---
 
 ## 2. ¿Qué aprenderás con este tutorial?
 
-Cuando termines el tutorial, tendrás una aplicación web sencilla y funcional, una app para manejar tus gastos.
+Al finalizar este tutorial, habrás creado tu primera aplicación web con Angular: una aplicación para gestionar gastos personales. Aprenderás:
 
-Tendrá (más o menos) esta apariencia:
+- Los conceptos fundamentales de Angular
+- Cómo estructurar una aplicación web moderna
+- Crear componentes interactivos
+- Manejar datos en tu aplicación
+- Dar estilo a tu aplicación con CSS moderno
+
+Tu aplicación final se verá así:
 
 ![App final en pantalla completa](/images/tutorial/app-3.png)
 
-O la siguiente:
+O si prefieres otro estilo:
 
 ![App final en pantalla completa](/images/tutorial/app-4.png)
 
-Tú podrás decidir qué estilos prefieres al final :D
+¡Tú podrás personalizar el diseño según tus preferencias!
 
 ---
 
 ## 3. Recuerda
 
-- Tienes a tu disposición a todos los mentores, siéntete en la libertad de llamarlos constantemente para que te ayuden con cualquier duda que tengas.
-- Seguro eres de l@s más list@s del grupo, si ese es el caso y terminas el desafío muy pronto, no te apresures a empezar el siguiente, podrás ser el/la guía para ayudar a tus compañer@s a terminarlo.
+- Nuestros mentores están aquí para ayudarte. No dudes en hacer preguntas, ¡ninguna pregunta es demasiado básica!
+- Si tienes experiencia previa y terminas los ejercicios antes que tus compañeros, ¡genial! Te invitamos a que ayudes a otros participantes. Enseñar es una excelente manera de reforzar tu propio aprendizaje.
+- La comunidad de Angular es colaborativa y acogedora. Estamos construyendo juntos el futuro del desarrollo web.

@@ -10,35 +10,41 @@ prevStep: '03-workshop-stackblitz'
 
 # ¿Qué son los componentes?
 
-> Los componentes son los bloques básicos de construcción de las páginas web en Angular. Contienen una parte visual en html (la vista) y una funcional en Typescript.
+> Imagina que estás construyendo una casa con bloques de LEGO. En Angular, los componentes son como esos bloques de LEGO: piezas fundamentales que al unirlas crean tu página web. Cada componente es una pieza independiente que tiene su propia apariencia (HTML) y su propio comportamiento (TypeScript).
 
 ---
 
-Un componente estará compuesto por tres bloques de código:
+Cuando creas un componente en Angular, necesitas tres elementos principales:
 
-1. **Imports**, las sentencias de importación de los diferentes elementos que empleará el componente.
+1. **Imports (Importaciones)**
 
-2. **Decorador** **_@Component_**, con al menos los siguientes metadatos:
+   - Son como traer las herramientas que necesitas para trabajar
+   - Por ejemplo, siempre necesitarás importar `Component` desde Angular para crear un componente
 
-   - Selector: que define la etiqueta html donde se renderiza el componente.
-   - Template: el archivo html con la vista del componente.
-   - Style: con el archivo CSS con los de estilos del componente.
+2. **Decorador @Component**
 
-3. **Export de la Clase**, definición y exportación de la clase con la lógica del componente.
+   - Es como una etiqueta especial que le dice a Angular: "¡Hey, esto es un componente!"
+   - Necesita algunos datos importantes:
+     - `selector`: Es el nombre que usarás para poner tu componente en el HTML (como una etiqueta nueva)
+     - `template`: Es donde escribes el HTML que se mostrará
+     - `style`: Es donde defines cómo se verá (los estilos CSS)
+
+3. **Clase del Componente**
+   - Es donde escribes toda la lógica de tu componente
+   - Aquí defines qué hace tu componente cuando el usuario interactúa con él
+
+Veamos un ejemplo sencillo:
 
 ```typescript
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  template: ` <h1>Hola mundo!</h1> `,
+  template: ` <h1>¡Hola mundo!</h1> `,
 })
 export class App {
   name = 'Angular';
 }
 ```
 
-[> Próximo artículo: Introducción a HTML](/tutorial/05-workshop-html)
-
-[< Artículo anterior: Stackblitz](/tutorial/03-workshop-stackblitz)
+Este componente simplemente muestra "¡Hola mundo!" en la página. ¡Es un comienzo simple pero importante!

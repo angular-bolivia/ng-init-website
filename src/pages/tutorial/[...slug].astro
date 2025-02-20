@@ -1,5 +1,7 @@
 ---
 import Layout from '@layout/Layout.astro';
+import { Code } from 'astro:components';
+
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -73,9 +75,9 @@ const { Content } = await tutorial.render();
           )
         }
       </div>
-      <article class="max-w-3xl mx-auto">
+      <article class="max-w-3xl mx-auto pb-20">
         <div class="prose">
-          <Content />
+          <Content components={{ pre: Code }} />
         </div>
       </article>
       <div class="relative h-screen">

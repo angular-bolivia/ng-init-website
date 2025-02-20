@@ -1,7 +1,7 @@
 ---
 title: Angular
 author: Angular Bolivia
-description: Angular es un framework que nos ayuda a desarrollar sitios web de manera fácil y rápida.
+description: Angular es un framework que nos ayuda a crear sitios y aplicaciones web modernas de una manera más fácil y organizada. ¡Fue creado por Google y es usado por miles de desarrolladores en todo el mundo!
 order: 2
 slug: 02-workshop-angular
 nextStep: '03-workshop-stackblitz'
@@ -10,12 +10,15 @@ prevStep: '01-workshop-welcome'
 
 # ¿Qué es Angular?
 
-> Angular es un framework de código abierto desarrollado por Google para desarrollar aplicaciones web robustas y escalables.
+> Angular es un framework que nos ayuda a crear sitios y aplicaciones web modernas de una manera más fácil y organizada. ¡Fue creado por Google y es usado por miles de desarrolladores en todo el mundo!
 
 ---
 
 <div class="flex justify-center items-center flex-col">
-  <img src="/images/angular-logo.png" alt="Logo de Angular" style="width: 250px;">
+
+  <div class="w-1/2">
+    <img src="/images/angular-logo.png" alt="Logo de Angular" >
+  </div>
   <p>
     Logo de angular
   </p>
@@ -23,22 +26,38 @@ prevStep: '01-workshop-welcome'
 
 ---
 
-Angular es un **framework de aplicaciones web**, gratuito de **código abierto (open source)** desarrollado en **TypeScript**, creado y mantenido por **Google**, utilizado para el desarrollo de **aplicaciones web de una sola página (Single Page App - SPA)**.
+Imagina que quieres construir una casa 🏠. Para hacerlo, necesitas herramientas y materiales que te ayuden a construirla de manera más rápida y segura. Angular es como ese conjunto de herramientas, pero para crear sitios web.
 
-Cuando construyes un sitio web siempre necesitas un conjunto de componentes similares: una manera de manejar la autenticación de usuarios (registrarse, iniciar sesión, cerrar sesión), un panel de administración para tu sitio web, formularios, una forma de subir archivos, etc.
+Angular es:
 
-Por suerte para nosotros, hace tiempo que otros desarrolladores se dieron cuenta de que siempre se enfrentaban a los mismos problemas cuando construían sitios web, por eso se unieron y crearon frameworks (Angular es uno de ellos) con componentes listos para usarse para ayudarnos a solucionar estos problemas.
+- **Gratuito**: Puedes usarlo sin pagar nada
+- **Código abierto**: La comunidad de desarrolladores puede ver y mejorar su código
+- **Creado con TypeScript**: Un lenguaje de programación que nos ayuda a escribir mejor código
+- **Mantenido por Google**: Lo que significa que está respaldado por una gran empresa
+- **Moderno**: Permite crear aplicaciones web que funcionan de manera fluida y rápida
 
-Los frameworks sirven para que no tengamos que reinventar la rueda cada vez y que podamos avanzar más rápido al construir un nuevo sitio.
+### ¿Por qué usar Angular?
+
+Cuando creamos un sitio web, normalmente necesitamos:
+
+- Un sistema para que los usuarios se registren y inicien sesión
+- Formularios para recoger información
+- Una manera de mostrar datos de manera bonita
+- Y muchas otras funciones comunes
+
+Angular ya tiene soluciones preparadas para todas estas necesidades comunes. Es como tener una caja de LEGO con piezas pre-construidas: ¡solo necesitas juntarlas de la manera que quieras!
 
 ---
 
-## ¿Qué es una aplicación web SPA?
+## ¿Cómo funciona una aplicación Angular?
 
-Una aplicación web SPA conocida como **web de una sola página**, es una en la cual la navegación entre secciones y páginas de la aplicación, así como la carga de datos se realiza de manera **dinámica**, casi instantánea, **asíncronamente** haciendo llamadas al servidor (**backend con un API**) y sobre todo sin refrescar la página en ningún momento.
+Las aplicaciones hechas con Angular son especiales porque:
 
-Es decir, las aplicaciones web que podemos hacer con Angular son reactivas y no recargan el navegador, todo es dinámico.
+- Son muy rápidas y fluidas
+- No necesitan recargar la página completa cada vez que haces clic en algo
+- Se actualizan instantáneamente cuando hay cambios
+- Funcionan como las aplicaciones que usas en tu teléfono: ¡rápidas y sin interrupciones!
 
-Esta descripción es un poco simplista, pero de momento no necesitas saber todos los detalles técnicos, con tener una idea general es más que suficiente.
+Por ejemplo, cuando usas Gemini Chat o YouTube (que están hechos con Angular), ¿notaste que la página no se recarga completamente cada vez que haces algo? ¡Esa es la magia de Angular en acción!
 
-Así que, en lugar de detenernos demasiado en los detalles, vamos a empezar a crear algo con Angular y ¡así aprenderemos las cosas importantes sobre la marcha!
+¿Listo para empezar a crear con Angular? ¡Vamos a aprender mientras construimos cosas interesantes!
