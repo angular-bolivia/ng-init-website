@@ -1,24 +1,22 @@
 ---
-import Layout from '@layout/Layout.astro';
 import { Code } from 'astro:components';
+import { getCollection, render } from 'astro:content';
 
-import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@layout/Layout.astro';
 
 export async function getStaticPaths() {
-  const tutorials = await getCollection('tutorial');
-  return tutorials.map((tutorial) => {
-    return {
-      params: { slug: tutorial.data.slug },
-      props: { tutorial },
-    };
-  });
+  const lessons = await getCollection('tutorial');
+  return lessons.map((lesson) => ({
+    params: { id: lesson.id },
+    props: { lesson },
+  }));
 }
 
 const tutorials = await getCollection('tutorial');
 tutorials.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
-const { tutorial } = Astro.props as { tutorial: CollectionEntry<'tutorial'> };
-const { Content } = await tutorial.render();
+const { lesson } = Astro.props;
+const { Content } = await render(lesson);
 ---
 
 <Layout>
@@ -31,9 +29,9 @@ const { Content } = await tutorial.render();
             tutorials.map((item) => (
               <li>
                 <a
-                  href={`/tutorial/${item.data.slug}`}
+                  href={`/tutorial/${item.id}`}
                   class={`block px-4 py-2 rounded-lg transition-colors ${
-                    tutorial.data.slug === item.data.slug
+                    lesson.id === item.id
                       ? 'bg-blue-500 text-white'
                       : 'hover:bg-gray-100 text-gray-700'
                   }`}
@@ -52,9 +50,9 @@ const { Content } = await tutorial.render();
     <main class="flex w-full p-8">
       <div class="relative h-screen">
         {
-          tutorial.data.prevStep && (
+          lesson.data.prevStep && (
             <a
-              href={`/tutorial/${tutorial.data.prevStep}`}
+              href={`/tutorial/${lesson.data.prevStep}`}
               class="fixed bottom-10 inline-flex items-center px-6 py-3 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
             >
               <svg
@@ -82,9 +80,9 @@ const { Content } = await tutorial.render();
       </article>
       <div class="relative h-screen">
         {
-          tutorial.data.nextStep && (
+          lesson.data.nextStep && (
             <a
-              href={`/tutorial/${tutorial.data.nextStep}`}
+              href={`/tutorial/${lesson.data.nextStep}`}
               class="fixed bottom-10 right-10 inline-flex items-center px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors"
             >
               Next
