@@ -21,7 +21,7 @@ export default defineConfig({
     service: sharpImageService(),
   },
   redirects: {
-    '/tutorial': '/tutorial/01-workshop-welcome'
+    '/tutorial': '/tutorial/01-welcome'
   },
   markdown: {
     shikiConfig: {
