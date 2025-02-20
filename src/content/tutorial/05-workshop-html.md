@@ -10,22 +10,24 @@ prevStep: '04-workshop-components'
 
 # Introducción a HTML
 
-> Te estarás preguntando, ¿qué es una plantilla o vista?
+> ¿Te has preguntado cómo Angular muestra el contenido en el navegador? ¡Las plantillas HTML son la respuesta!
 
 ---
 
-Una plantilla es un archivo que podemos reutilizar para presentar información diferente de forma consistente - por ejemplo, podrías utilizar una plantilla para ayudarte a escribir una carta, porque, aunque cada carta puede contener un mensaje distinto y dirigirse a una persona diferente, compartirán el mismo formato.
+Imagina que tienes que escribir varias cartas. Aunque cada carta tenga un mensaje diferente y vaya dirigida a distintas personas, todas comparten el mismo formato: fecha, saludo, contenido y despedida. En Angular, las plantillas funcionan de manera similar: son como un formato predefinido que nos permite mostrar diferente información manteniendo una estructura consistente.
 
-El formato de una plantilla en Angular se describe en un lenguaje llamado HTML.
+Para crear estas plantillas en Angular, utilizamos HTML, que es el lenguaje básico para crear páginas web.
 
 ---
 
 ## ¿Qué es HTML?
 
-HTML es un código simple que es interpretado por tu navegador web - como Chrome, Firefox o Safari - para mostrar una página web al usuario.
+HTML es el lenguaje fundamental que todos los navegadores web (como Chrome, Firefox o Safari) entienden y utilizan para mostrar páginas web. Es como el esqueleto de toda página web que visitas.
 
-**HTML** significa **HyperText Markup Language** - en español **Lenguaje de Marcas de HiperTexto**. **HyperText**, hipertexto en español, significa que es un tipo de texto que soporta hipervínculos entre páginas. **Markup** significa que hemos tomado un documento y lo hemos marcado con código para decirle a algo (en este caso, un navegador) cómo interpretar la página. El código HTML está construido con **etiquetas**, cada una comenzando con `<` y terminando con `>`. Estas etiquetas representan **elementos** de marcado.
+HTML significa "HyperText Markup Language" (Lenguaje de Marcado de Hipertexto). Vamos a entender qué significa esto:
 
-[> Próximo artículo: ¡Tu primera plantilla!](/tutorial/06-workshop-template)
+- **HyperText (Hipertexto)**: Es texto que puede conectarse con otras páginas web a través de enlaces (¡como cuando haces clic en un link y te lleva a otra página!)
+- **Markup (Marcado)**: Se refiere a que usamos etiquetas especiales para "marcar" o "etiquetar" diferentes partes de la página y decirle al navegador cómo debe mostrarlas
+- **Language (Lenguaje)**: Es el conjunto de reglas y etiquetas que usamos para escribir nuestras páginas
 
-[< Artículo anterior: ¿Qué son los componentes?](/tutorial/04-workshop-components)
+Las etiquetas HTML son fáciles de reconocer porque siempre van entre los símbolos `<` y `>`. Por ejemplo: `<p>` para párrafos, `<h1>` para títulos, `<button>` para botones. ¡No te preocupes si no las conoces todas ahora, las iremos aprendiendo poco a poco!
