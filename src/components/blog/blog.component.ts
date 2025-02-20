@@ -14,7 +14,6 @@ import PromptIcon from '@assets/icons/prompt-icon.svg';
           class="flex gap-1 md:gap-2 text-white text-4xl font-bold text-center"
         >
           <img [src]="PROMPT_ICON_IMG" alt="Prompt Icon" />
-
           {{ TITLE }}
         </h2>
       </header>
@@ -36,7 +35,7 @@ import PromptIcon from '@assets/icons/prompt-icon.svg';
 })
 export default class BlogComponent {
   protected readonly TITLE: string = 'Blog';
-  protected readonly CODE_OF_CONDUCT: string = 'Codigo de conducta';
+  protected readonly CODE_OF_CONDUCT: string = 'Código de conducta';
   protected readonly CODE_OF_CONDUCT_CONTENT: string =
     'Explora el código de conducta del día del evento.';
   protected readonly CODE_OF_CONDUCT_DATE: string = '3/2/2025';
