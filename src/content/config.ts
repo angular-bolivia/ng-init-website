@@ -5,10 +5,11 @@ const tutorial = defineCollection({
   schema: z.object({
     title: z.string(),
     author: z.string(),
-    publishDate: z.coerce.date(),
     description: z.string(),
-    published: z.boolean(),
     slug: z.string(),
+    nextStep: z.string().optional(),
+    prevStep: z.string().optional(),
+    order: z.number().optional(),
   }),
 });
 

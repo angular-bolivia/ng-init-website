@@ -1,10 +1,11 @@
 ---
-title: Tutorial - Componentes
+title: Componentes
 author: Angular Bolivia
-publish date: 2020-11-11
 description: Los componentes son los bloques básicos de construcción de las páginas web en Angular. Contienen una parte visual en html (la vista) y una funcional en Typescript.
-published: true
+order: 4
 slug: 04-workshop-components
+nextStep: '05-workshop-html'
+prevStep: '03-workshop-stackblitz'
 ---
 
 # ¿Qué son los componentes?

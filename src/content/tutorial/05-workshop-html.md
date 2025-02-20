@@ -1,10 +1,11 @@
 ---
-title: Tutorial - HTML
+title: HTML
 author: Angular Bolivia
-publish date: 2020-11-11
 description: Te estarás preguntando, ¿qué es una plantilla o vista?
-published: true
+order: 5
 slug: 05-workshop-html
+nextStep: '06-workshop-template'
+prevStep: '04-workshop-components'
 ---
 
 # Introducción a HTML

@@ -1,10 +1,11 @@
 ---
-title: Tutorial - Angular
+title: Angular
 author: Angular Bolivia
-publish date: 2020-11-11
 description: Angular es un framework que nos ayuda a desarrollar sitios web de manera fácil y rápida.
-published: true
+order: 2
 slug: 02-workshop-angular
+nextStep: '03-workshop-stackblitz'
+prevStep: '01-workshop-welcome'
 ---
 
 # ¿Qué es Angular?
@@ -41,7 +42,3 @@ Es decir, las aplicaciones web que podemos hacer con Angular son reactivas y no 
 Esta descripción es un poco simplista, pero de momento no necesitas saber todos los detalles técnicos, con tener una idea general es más que suficiente.
 
 Así que, en lugar de detenernos demasiado en los detalles, vamos a empezar a crear algo con Angular y ¡así aprenderemos las cosas importantes sobre la marcha!
-
-[> Próximo artículo: Stackblitz](/tutorial/03-workshop-stackblitz)
-
-[< Artículo anterior: ¡Bienvenida a ng|she!](/tutorial/01-workshop-welcome)

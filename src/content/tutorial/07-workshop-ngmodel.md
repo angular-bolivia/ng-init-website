@@ -1,10 +1,11 @@
 ---
-title: Tutorial - ngModel
+title: ngModel
 author: Angular Bolivia
-publish date: 2020-11-15
 description: En este punto vamos a aprender el uso de ngModel para ingresar nuestros gastos.
-published: true
+order: 7
 slug: 07-workshop-ngmodel
+nextStep: '08-workshop-add-expenses'
+prevStep: '06-workshop-template'
 ---
 
 # Usando ngModel

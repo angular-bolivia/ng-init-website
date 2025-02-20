@@ -1,10 +1,11 @@
 ---
-title: Tutorial - Tu primera plantilla
+title: Tu primera plantilla
 author: Angular Bolivia
-publish date: 2020-11-15
 description: Ahora vamos a añadir la estructura HTML inicial de nuestra aplicación.
-published: true
+order: 6
 slug: 06-workshop-template
+nextStep: '07-workshop-ngmodel'
+prevStep: '05-workshop-html'
 ---
 
 # ¡Tu primera plantilla!

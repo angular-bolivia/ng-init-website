@@ -1,13 +1,13 @@
 ---
-title: 'Tutorial - Bienvenida'
+title: 'Bienvenida'
 author: 'Angular Bolivia'
-publishDate: 2025-02-19T00:00:00.000Z
 description: 'Primero que nada, nos alegra mucho tenerte aquí, nuestra misión es ayudarte a que te sientas cómod@ todo el tiempo. Si en algún momento necesitas ayuda no dudes en buscarnos, estamos aquí para ti.'
-published: true
+order: 1
 slug: 01-workshop-welcome
+nextStep: '02-workshop-angular'
 ---
 
-# ¡Bienvenida a ng|she!
+# ¡Bienvenida a ngInit!
 
 > Primero que nada, nos alegra mucho tenerte aquí, nuestra misión es ayudarte a que te sientas cómod@ todo el tiempo. Si en algún momento necesitas ayuda no dudes en buscarnos, estamos aquí para ti.
 
@@ -37,15 +37,11 @@ Cuando termines el tutorial, tendrás una aplicación web sencilla y funcional, 
 
 Tendrá (más o menos) esta apariencia:
 
-<div class="text-center w-full">
-  <img src="/images/tutorial/app-3.png" alt="App final en pantalla completa" >
-</div>
+![App final en pantalla completa](/images/tutorial/app-3.png)
 
 O la siguiente:
 
-<div class="text-center w-full">
-  <img src="/images/tutorial/app-4.png" alt="App final en pantalla completa" >
-</div>
+![App final en pantalla completa](/images/tutorial/app-4.png)
 
 Tú podrás decidir qué estilos prefieres al final :D
 
@@ -55,5 +51,3 @@ Tú podrás decidir qué estilos prefieres al final :D
 
 - Tienes a tu disposición a todos los mentores, siéntete en la libertad de llamarlos constantemente para que te ayuden con cualquier duda que tengas.
 - Seguro eres de l@s más list@s del grupo, si ese es el caso y terminas el desafío muy pronto, no te apresures a empezar el siguiente, podrás ser el/la guía para ayudar a tus compañer@s a terminarlo.
-
-[> Próximo artículo: ¿Qué es Angular?](/tutorial/02-workshop-angular)

@@ -1,10 +1,11 @@
 ---
-title: Tutorial - Stackblitz
+title: Stackblitz
 author: Angular Bolivia
-publish date: 2020-11-11
 description: Stackblitz es una página web que te permite crear aplicaciones de Angular en el navegador, eso quiere decir que no tienes que instalar nada más.
-published: true
+order: 3
 slug: 03-workshop-stackblitz
+nextStep: '04-workshop-components'
+prevStep: '02-workshop-angular'
 ---
 
 # Stackblitz

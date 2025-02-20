@@ -1,11 +1,9 @@
 ---
 import Layout from '@layout/Layout.astro';
-
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const tutorials = await getCollection('tutorial');
-
   return tutorials.map((tutorial) => {
     return {
       params: { slug: tutorial.data.slug },
@@ -14,14 +12,97 @@ export async function getStaticPaths() {
   });
 }
 
+const tutorials = await getCollection('tutorial');
+tutorials.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
 const { tutorial } = Astro.props as { tutorial: CollectionEntry<'tutorial'> };
 const { Content } = await tutorial.render();
 ---
 
 <Layout>
-  <article class="container mx-auto">
-    <section class="prose lg:prose-xl">
-      <Content />
-    </section>
-  </article>
+  <div class="flex min-h-screen relative">
+    {/* Sidebar with tutorial list */}
+    <aside class="w-64 bg-gray-50 border-r border-gray-200 p-6 pt-0">
+      <nav class="sticky top-0 pt-6">
+        <ul class="space-y-2">
+          {
+            tutorials.map((item) => (
+              <li>
+                <a
+                  href={`/tutorial/${item.data.slug}`}
+                  class={`block px-4 py-2 rounded-lg transition-colors ${
+                    tutorial.data.slug === item.data.slug
+                      ? 'bg-blue-500 text-white'
+                      : 'hover:bg-gray-100 text-gray-700'
+                  }`}
+                  data-astro-prefetch
+                >
+                  {item.data.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </aside>
+
+    {/* Main content */}
+    <main class="flex w-full p-8">
+      <div class="relative h-screen">
+        {
+          tutorial.data.prevStep && (
+            <a
+              href={`/tutorial/${tutorial.data.prevStep}`}
+              class="fixed bottom-10 inline-flex items-center px-6 py-3 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              Back
+            </a>
+          )
+        }
+      </div>
+      <article class="max-w-3xl mx-auto">
+        <div class="prose">
+          <Content />
+        </div>
+      </article>
+      <div class="relative h-screen">
+        {
+          tutorial.data.nextStep && (
+            <a
+              href={`/tutorial/${tutorial.data.nextStep}`}
+              class="fixed bottom-10 right-10 inline-flex items-center px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+            >
+              Next
+              <svg
+                class="w-5 h-5 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          )
+        }
+      </div>
+    </main>
+  </div>
 </Layout>
