@@ -2,7 +2,7 @@
 import { Code } from 'astro:components';
 import { getCollection, render } from 'astro:content';
 
-import Layout from '@layout/Layout.astro';
+import TutoLayout from '@layout/TutoLayout.astro';
 
 export async function getStaticPaths() {
   const lessons = await getCollection('tutorial');
@@ -19,7 +19,7 @@ const { lesson } = Astro.props;
 const { Content } = await render(lesson);
 ---
 
-<Layout>
+<TutoLayout>
   <div class="flex min-h-screen relative">
     {/* Sidebar with tutorial list */}
     <aside class="w-64 bg-gray-50 border-r border-gray-200 p-6 pt-0">
@@ -105,4 +105,4 @@ const { Content } = await render(lesson);
       </div>
     </main>
   </div>
-</Layout>
+</TutoLayout>
