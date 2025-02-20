@@ -1,5 +1,6 @@
 ---
 import '@styles/global.css';
+import FooterComponent from '@components/footer.component';
 ---
 
 <!doctype html>
@@ -9,10 +10,6 @@ import '@styles/global.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.ico?v=0.0.1" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <meta charset="utf-8" />
@@ -33,5 +30,6 @@ import '@styles/global.css';
   </head>
   <body>
     <slot />
+    <FooterComponent client:visible />
   </body>
 </html>

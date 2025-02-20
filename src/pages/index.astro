@@ -4,7 +4,6 @@ import HeroComponent from '@components/hero.component';
 import MentorsComponent from '@components/mentors.component';
 import BlogComponent from '@components/blog/blog.component';
 import Layout from '@layout/Layout.astro';
-import { FooterComponent } from '@components/footer.component';
 ---
 
 <Layout>
@@ -13,6 +12,5 @@ import { FooterComponent } from '@components/footer.component';
     <AboutUsComponent client:visible />
     <MentorsComponent client:visible />
     <BlogComponent client:visible />
-    <FooterComponent client:visible />
   </main>
 </Layout>
