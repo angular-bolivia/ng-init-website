@@ -3,7 +3,7 @@ title: Tu primera plantilla
 author: Angular Bolivia
 description: Aprenderemos a crear nuestra primera plantilla HTML en Angular para construir la interfaz de nuestra aplicación.
 order: 6
-nextStep: '07-ngmodel'
+nextStep: '07-signal'
 prevStep: '05-html'
 ---
 
