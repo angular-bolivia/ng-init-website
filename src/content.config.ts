@@ -9,7 +9,7 @@ const tutorial = defineCollection({
     description: z.string(),
     nextStep: z.string().optional(),
     prevStep: z.string().optional(),
-    order: z.number().optional(),
+    order: z.number(),
   }),
 });
 

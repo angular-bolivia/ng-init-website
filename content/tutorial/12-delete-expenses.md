@@ -3,9 +3,8 @@ title: Eliminando gastos
 author: Angular Bolivia
 description: ¿Llegaste muy rápido hasta aquí? Si aún queda tiempo para que termine el taller, podemos ver cómo eliminar gastos de nuestra lista.
 order: 12
-slug: 12-workshop-delete-expenses
-nextStep: '13-workshop-share'
-prevStep: '11-workshop-css'
+nextStep: '13-share'
+prevStep: '11-css'
 ---
 
 # Eliminando gastos
@@ -79,7 +78,3 @@ La sección de nuestra plantilla con la lista de gastos tendrá el siguiente có
 Y nuestra app se verá así:
 
 ![Eliminar gastos](/images/tutorial/template-7.png)
-
-[> Próximo artículo: ¡Comparte tu app!](/tutorial/13-workshop-share)
-
-[< Artículo anterior: ¡Que quede bonito!](/tutorial/11-workshop-css)

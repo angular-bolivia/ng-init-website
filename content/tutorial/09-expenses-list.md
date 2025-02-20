@@ -3,9 +3,8 @@ title: Lista de gastos
 author: Angular Bolivia
 description: En la variable gastos se encuentran todos los gastos guardados que el usuario está creando, ahora llego el punto de mostrarlos en pantalla.
 order: 9
-slug: 09-workshop-expenses-list
-nextStep: '10-workshop-budget'
-prevStep: '08-workshop-add-expenses'
+nextStep: '10-budget'
+prevStep: '08-add-expenses'
 ---
 
 # Mostrando los gastos
@@ -130,7 +129,3 @@ export class App {
 ```
 
 ![Lista de gastos dinámica inicial](/images/tutorial/template-4.png)
-
-[> Próximo artículo: Agregando presupuesto y saldo](/tutorial/10-workshop-budget)
-
-[< Artículo anterior: Agregando gastos](/tutorial/08-workshop-add-expenses)

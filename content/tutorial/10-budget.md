@@ -3,9 +3,8 @@ title: resupuesto y saldo
 author: Angular Bolivia
 description: Para controlar nuestros gastos es importante saber cuál es nuestro presupuesto y cuál sería nuestro saldo.
 order: 10
-slug: 10-workshop-budget
-nextStep: '11-workshop-css'
-prevStep: '09-workshop-expenses-list'
+nextStep: '11-css'
+prevStep: '09-expenses-list'
 ---
 
 # Agregando presupuesto y saldo
@@ -314,7 +313,3 @@ export class App {
   }
 }
 ```
-
-[> Próximo artículo: CSS - ¡Que quede bonito!](/tutorial/11-workshop-css)
-
-[< Artículo anterior: Mostrando los gastos](/tutorial/09-workshop-expenses-list)

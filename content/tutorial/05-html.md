@@ -3,9 +3,8 @@ title: HTML
 author: Angular Bolivia
 description: Te estarás preguntando, ¿qué es una plantilla o vista?
 order: 5
-slug: 05-workshop-html
-nextStep: '06-workshop-template'
-prevStep: '04-workshop-components'
+nextStep: '06-template'
+prevStep: '04-components'
 ---
 
 # Introducción a HTML

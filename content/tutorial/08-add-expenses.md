@@ -3,9 +3,8 @@ title: Agregando gastos
 author: Angular Bolivia
 description: Como habrás notado, Interpolation es bastante fácil. Ahora vamos a crear una función que nos permita guardar nuestros gastos.
 order: 8
-slug: 08-workshop-add-expenses
-nextStep: '09-workshop-expenses-list'
-prevStep: '07-workshop-ngmodel'
+nextStep: '09-expenses-list'
+prevStep: '07-ngmodel'
 ---
 
 # Agregando gastos
@@ -186,7 +185,3 @@ Esto lo vamos a solucionar haciendo que una vez que se inserte el nuevo gasto en
     this.cantidadGasto = 0;
   }
 ```
-
-[> Próximo artículo: Mostrando los gastos](/tutorial/09-workshop-expenses-list)
-
-[< Artículo anterior: Usando ngModel](/tutorial/07-workshop-ngmodel)

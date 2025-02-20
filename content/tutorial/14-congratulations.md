@@ -3,9 +3,8 @@ title: ¿Y ahora qué?
 author: Angular Bolivia
 description: Felicidades, acabas de dar un gran paso para convertirte en Angular Developer. ¡Estamos orgullosos!
 order: 14
-slug: 14-workshop-congratulations
-nextStep: '15-retos-extra'
-prevStep: '13-workshop-share'
+nextStep: '15-extra'
+prevStep: '13-share'
 ---
 
 # ¿Y ahora qué?
@@ -33,7 +32,3 @@ Después de eso, asegúrate de seguir nuestra página **Angular Bolivia** en <a 
 - <a href="https://angular.dev/playground" target="_blank" rel="noopener noreferrer">Angular Playground</a>. Un sitio en el que puedes probar y aprender con tu código al estilo de Stackblitz. Explora las plantillas que se tienen en dicha página.
 
 ¿Te gustaría explorar más retos con tu proyecto actual? Consulta posibles tareas adicionales a tu mentor.
-
-[> Retos extra](/tutorial/15-retos-extra)
-
-[< Artículo anterior: ¡Comparte tu app!](/tutorial/13-workshop-share)

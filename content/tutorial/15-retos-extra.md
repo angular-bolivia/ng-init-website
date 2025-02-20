@@ -3,9 +3,7 @@ title: Retos Extra
 author: Angular Bolivia
 description: Retos adicionales para el workshop
 order: 15
-slug: 15-retos-extra
-nextStep: '16-workshop-congratulations'
-prevStep: '14-workshop-congratulations'
+prevStep: '14-congratulations'
 ---
 
 # Retos Adicionales
@@ -142,5 +140,3 @@ UPDATE src/main.ts (1444 bytes)
 Observa que se actualizaron dos archivos: `main.ts` y `main.html`. Revisa que cambios ocurrieron y experimenta el nuevo control de flujo.
 
 Aprende más sobre el nuevo control de flujo [aquí](https://angular.dev/guide/templates/control-flow).
-
-[< Volver al inicio](/blog/01-workshop-welcome)

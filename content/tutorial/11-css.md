@@ -3,9 +3,8 @@ title: CSS
 author: Angular Bolivia
 description: Nuestra aplicación para manejo de gastos todavía es un poco fea, ¿no te parece? ¡Es hora de ponerla bonita! Para eso, vamos a usar CSS.
 order: 11
-slug: 11-workshop-css
-nextStep: '12-workshop-delete-expenses'
-prevStep: '10-workshop-budget'
+nextStep: '12-delete-expenses'
+prevStep: '10-budget'
 ---
 
 # CSS - ¡Que quede bonito!
@@ -62,7 +61,3 @@ El resultado de la Opción #1:
 El resultado de la Opción #2:
 
 ![App final en pantalla completa](/images/tutorial/app-4.png)
-
-[> Próximo artículo: Eliminando gastos](/tutorial/12-workshop-delete-expenses)
-
-[< Artículo anterior: Agregando presupuesto y saldo](/tutorial/10-workshop-budget)

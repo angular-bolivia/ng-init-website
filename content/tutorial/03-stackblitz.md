@@ -3,9 +3,8 @@ title: Stackblitz
 author: Angular Bolivia
 description: Stackblitz es un entorno de desarrollo web que permite crear aplicaciones Angular directamente en el navegador, eliminando la necesidad de instalaciones locales.
 order: 3
-slug: 03-workshop-stackblitz
-nextStep: '04-workshop-components'
-prevStep: '02-workshop-angular'
+nextStep: '04-components'
+prevStep: '02-angular'
 ---
 
 # Stackblitz: Tu primer entorno de desarrollo Angular en la nube

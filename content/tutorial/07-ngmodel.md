@@ -3,9 +3,8 @@ title: ngModel
 author: Angular Bolivia
 description: En este punto vamos a aprender el uso de ngModel para ingresar nuestros gastos.
 order: 7
-slug: 07-workshop-ngmodel
-nextStep: '08-workshop-add-expenses'
-prevStep: '06-workshop-template'
+nextStep: '08-add-expenses'
+prevStep: '06-template'
 ---
 
 # Usando ngModel
@@ -100,7 +99,3 @@ El resultado:
 <div class="flex justify-center items-center flex-col">
   <img src="/images/tutorial/component-2.png" alt="Interpolation aplicado" >
 </div>
-
-[> Próximo artículo: Agregando gastos](/tutorial/08-workshop-add-expenses)
-
-[< Artículo anterior: ¡Tu primera plantilla!](/tutorial/06-workshop-template)
