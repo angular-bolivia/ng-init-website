@@ -2,9 +2,9 @@
 title: CSS
 author: Angular Bolivia
 description: Nuestra aplicación para manejo de gastos todavía es un poco fea, ¿no te parece? ¡Es hora de ponerla bonita! Para eso, vamos a usar CSS.
-order: 11
-nextStep: '12-delete-expenses'
-prevStep: '10-budget'
+order: 12
+prevStep: '11-budget'
+nextStep: '13-delete-expenses'
 ---
 
 # CSS - ¡Que quede bonito!

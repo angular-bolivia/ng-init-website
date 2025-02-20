@@ -2,9 +2,9 @@
 title: ¿Y ahora qué?
 author: Angular Bolivia
 description: Felicidades, acabas de dar un gran paso para convertirte en Angular Developer. ¡Estamos orgullosos!
-order: 14
-nextStep: '15-extra'
-prevStep: '13-share'
+order: 15
+prevStep: '14-share'
+nextStep: '16-retos-extra'
 ---
 
 # ¿Y ahora qué?

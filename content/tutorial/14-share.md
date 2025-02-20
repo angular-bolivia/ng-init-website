@@ -2,9 +2,9 @@
 title: Comparte tu app
 author: Angular Bolivia
 description: Si te ha gustado lo que has hecho hasta ahora, compártelo con tus amigos y familiares.
-order: 13
-nextStep: '14-congratulations'
-prevStep: '12-delete-expenses'
+order: 14
+prevStep: '13-delete-expenses'
+nextStep: '15-congratulations'
 ---
 
 # ¡Comparte tu app!

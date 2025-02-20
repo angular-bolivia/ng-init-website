@@ -2,8 +2,8 @@
 title: Retos Extra
 author: Angular Bolivia
 description: Retos adicionales para el workshop
-order: 15
-prevStep: '14-congratulations'
+order: 16
+prevStep: '15-congratulations'
 ---
 
 # Retos Adicionales

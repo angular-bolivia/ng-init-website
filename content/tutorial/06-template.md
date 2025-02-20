@@ -1,21 +1,21 @@
 ---
 title: Tu primera plantilla
 author: Angular Bolivia
-description: Ahora vamos a añadir la estructura HTML inicial de nuestra aplicación.
+description: Aprenderemos a crear nuestra primera plantilla HTML en Angular para construir la interfaz de nuestra aplicación.
 order: 6
 nextStep: '07-ngmodel'
 prevStep: '05-html'
 ---
 
-# ¡Tu primera plantilla!
+# ¡Tu primera plantilla HTML en Angular!
 
-> Ahora vamos a añadir la estructura HTML inicial de nuestra aplicación.
+> En este paso, aprenderemos a crear la estructura básica de nuestra aplicación usando HTML. Las plantillas en Angular son archivos HTML que nos permiten definir cómo se verá nuestra aplicación.
 
 ---
 
-## Paso #1
+## Paso #1: Creando el formulario de gastos
 
-Copia el siguiente código HTML a tu archivo `main.ts`. Este código debe estar en la propiedad `template`:
+Ahora vamos a crear un formulario simple para que los usuarios puedan ingresar sus gastos. Para esto, necesitamos copiar el siguiente código HTML y pegarlo en el archivo `main.ts`, específicamente dentro de la propiedad `template`:
 
 ```html
 <div class="contenedor-principal">
@@ -33,8 +33,14 @@ Copia el siguiente código HTML a tu archivo `main.ts`. Este código debe estar 
 </div>
 ```
 
-El resultado que deberás obtener:
+Este código HTML crea:
 
-<div class="flex justify-center items-center flex-col">
-  <img src="/images/tutorial/template-1.png" alt="Primera parte de la plantilla" >
-</div>
+- Un contenedor principal que agrupa todo nuestro contenido
+- Un formulario con un título
+- Dos campos de entrada:
+  - Un campo de texto para el nombre del gasto
+  - Un campo numérico para la cantidad del gasto
+
+Cuando copies este código, deberías ver algo como esto en tu pantalla:
+
+![Página principal de Stackblitz](/images/tutorial/template-1.png)

@@ -2,9 +2,9 @@
 title: Lista de gastos
 author: Angular Bolivia
 description: En la variable gastos se encuentran todos los gastos guardados que el usuario está creando, ahora llego el punto de mostrarlos en pantalla.
-order: 9
-nextStep: '10-budget'
-prevStep: '08-add-expenses'
+order: 10
+prevStep: '09-add-expenses'
+nextStep: '11-budget'
 ---
 
 # Mostrando los gastos
