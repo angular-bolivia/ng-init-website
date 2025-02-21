@@ -13,68 +13,64 @@ nextStep: '14-share'
 
 ---
 
-## Paso #1
+## Paso #1: Crear la función para eliminar gastos
 
-En el archivo `main.ts` vamos a crear una nueva función llamada `eliminarGasto` que recibirá el índice del gasto a eliminar y la cantidad del gasto:
+En el archivo `main.ts` vamos a crear una nueva función llamada `eliminarGasto`. Esta función nos permitirá:
+
+1. Eliminar un gasto específico de nuestra lista
+2. Actualizar nuestro saldo sumando el valor del gasto eliminado
+
+La función necesita dos parámetros:
+
+- `indiceGasto`: La posición del gasto en la lista que queremos eliminar
+- `cantidadGasto`: El valor en Bolivianos del gasto que vamos a eliminar
+
+Aquí está el código:
 
 ```typescript
-  eliminarGasto(indiceGasto: number, cantidadGasto: number): void {
-    this.gastos.splice(indiceGasto, 1);
-    this.saldo += cantidadGasto;
-  }
+eliminarGasto(indiceGasto: number, cantidadGasto: number): void {
+  this.gastos.update((values) => values.filter((_, index) => index !== indiceGasto));
+  this.saldo.set(this.saldo() + cantidadGasto);
+}
 ```
 
-Como puedes ver, estamos usando la función `splice` de nuestro **Array** de gastos. La misma elimina la cantidad de elementos que le indiquemos a partir del índice que le pasamos. En este caso, el índice lo pasaremos desde la plantilla y la cantidad de elementos que eliminaremos será solo 1 siempre. En la otra línea estamos agregando a nuestro saldo la cantidad del gasto que estamos eliminando.
+¿Qué hace esta función?
 
-> Los **índices** en los **Arrays** representan la posición de cada uno de los elementos. Toma en cuenta que los **índices** se empiezan contando desde **0**.
+1. Usa `filter()` para crear una nueva lista que excluye el gasto que queremos eliminar
+2. Actualiza nuestro saldo sumando el valor del gasto que acabamos de eliminar
 
-## Paso #2
+## Paso #2: Agregar el botón para eliminar en la plantilla
 
-Ahora debemos obtener el índice de cada uno de nuestros gastos en la plantilla. Para ello podemos pedirle a la directiva que nos la pase de la siguiente madera: `index as indice`.
+Ahora necesitamos agregar un botón que nos permita eliminar cada gasto. Para esto, vamos a modificar nuestra plantilla HTML.
 
-```html
-<li *ngFor="let gasto of gastos; index as indice"></li>
-```
+Angular nos proporciona una variable especial llamada `$index` que nos indica la posición de cada elemento en nuestra lista. Vamos a usar esta variable para saber qué gasto queremos eliminar.
 
-Lo siguiente es agregar un botón para cada gasto, al que al hacerle click llame a la función que acabamos de crear:
-
-```html
-<button (click)="eliminarGasto(indice, gasto.cantidad)">
-  <img
-    src="https://raw.githubusercontent.com/angular-bolivia/ng-she-workshop/develop/src/assets/trash-icon.svg"
-    alt="Eliminar gasto"
-  />
-</button>
-```
-
-La sección de nuestra plantilla con la lista de gastos tendrá el siguiente código:
+Así quedará nuestro código HTML:
 
 ```html
-<div class="contenedor-lista" *ngIf="saldoInicialIngresado">
-  <div class="restante">
-    <p>Saldo disponible</p>
-    <p>{{saldo}} Bs</p>
+@for (gasto of gastos(); track $index) {
+<li>
+  <p>{{gasto.nombre}}</p>
+  <div>
+    <span>{{gasto.cantidad}} Bs</span>
+    <!-- Agregamos el botón para eliminar -->
+    <button (click)="eliminarGasto($index, gasto.cantidad)">
+      <img
+        src="https://raw.githubusercontent.com/angular-bolivia/ng-she-workshop/develop/src/assets/trash-icon.svg"
+        alt="Eliminar gasto"
+      />
+    </button>
   </div>
-
-  <div class="caja-lista">
-    <ul>
-      <li *ngFor="let gasto of gastos; index as indice">
-        <p>{{gasto.nombre}}</p>
-        <div>
-          <span>{{gasto.cantidad}} Bs</span>
-          <button (click)="eliminarGasto(indice, gasto.cantidad)">
-            <img
-              src="https://raw.githubusercontent.com/angular-bolivia/ng-she-workshop/develop/src/assets/trash-icon.svg"
-              alt="Eliminar gasto"
-            />
-          </button>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+</li>
+}
 ```
 
-Y nuestra app se verá así:
+¿Qué hemos agregado?
+
+1. Un botón con un ícono de basura
+2. Cuando hacemos clic en el botón, llamamos a nuestra función `eliminarGasto`
+3. Le pasamos el `$index` (posición del gasto) y la `cantidad` del gasto
+
+Y así se verá nuestra app con el nuevo botón para eliminar:
 
 ![Eliminar gastos](/images/tutorial/template-7.png)

@@ -1,18 +1,25 @@
 ---
 title: Comparte tu app
 author: Angular Bolivia
-description: Si te ha gustado lo que has hecho hasta ahora, compártelo con tus amigos y familiares.
+description: ¡Felicitaciones! Has creado tu primera aplicación en Angular. Ahora es momento de mostrar al mundo lo que has logrado.
 order: 14
 prevStep: '13-delete-expenses'
 nextStep: '15-congratulations'
 ---
 
-# ¡Comparte tu app!
+# ¡Comparte tu primera aplicación Angular!
 
-> Si te ha gustado lo que has hecho hasta ahora, compártelo con tus amigos y familiares.
+> ¡Has llegado muy lejos! Has creado tu primera aplicación en Angular y es momento de mostrar al mundo lo que has logrado. Comparte tu trabajo con amigos, familia y la comunidad de desarrolladores.
 
 ---
 
-Haz click en el botón **Open Preview in new Tab** nuevamente, copia la URL y comparte para que todos vean tu increíble trabajo.
+Para compartir tu aplicación, sigue estos sencillos pasos:
 
-![Compartir aplicación](/images/tutorial/share.png)
+1. Busca el botón **Open Preview in new Tab** en la parte superior de tu editor
+2. Haz clic en él para abrir tu aplicación en una nueva pestaña
+3. Copia la URL de la nueva pestaña
+4. ¡Comparte el enlace! Todos podrán ver tu aplicación funcionando en tiempo real
+
+![Compartir tu primera aplicación Angular](/images/tutorial/share.png)
+
+¡La comunidad de Angular estará encantada de ver tu progreso! 🚀

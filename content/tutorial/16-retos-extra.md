@@ -8,53 +8,60 @@ prevStep: '15-congratulations'
 
 # Retos Adicionales
 
-¿Te gustaría seguir practicando junto a tu proyecto? Estás en el lugar indicado.
+> ¡Felicitaciones por llegar hasta aquí! 👏 Si quieres seguir practicando y mejorando tu aplicación, te proponemos los siguientes retos que te ayudarán a aprender más sobre Angular.
 
-### Separar la Plantilla
+### Reto 1: Separar el HTML del Componente
 
-Como te habrás dado cuenta, en este momento el código de la plantilla y el código TypeScript se encuentran en el mismo archivo.
+Hasta ahora, hemos tenido todo nuestro código HTML y TypeScript en un mismo archivo. Esto es útil para ejemplos pequeños, pero en aplicaciones reales es mejor tener el código organizado en archivos separados.
 
-En caso de que la aplicación llegara a crecer en líneas de código sería un tanto incómodo seguir trabajando en un mismo archivo.
+Vamos a separar nuestro HTML en su propio archivo siguiendo estos pasos:
 
-Para facilitar estar tarea debemos:
+1. Crea un nuevo archivo llamado `main.html`
+2. Copia todo el código HTML que está dentro de la propiedad `template` del componente y pégalo en el nuevo archivo `main.html`
+3. En tu componente, cambia la propiedad `template` por `templateUrl` y apunta al nuevo archivo
 
-- Crear un archivo `main.html`.
-- Mover el código de la plantilla a ese nuevo archivo.
-- Referenciar a la nueva plantilla desde el componente. Para ello se debe hacer uso de la propiedad `templateUrl` en lugar de `template` en la configuración del component.
+Tu componente debería quedar así:
 
 ```ts
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [FormsModule, NgFor, NgIf],
-  templateUrl: 'main.html',
+  templateUrl: 'main.html', // Ahora usamos templateUrl en lugar de template
 })
 export class App {}
 ```
 
-### Agregar un botón de "Reiniciar"
+### Reto 2: Agregar un Botón de Reinicio
 
-Cuando inicia la aplicación, actualmente permite ingresar un valor numérico para el presupuesto. Luego de ingresado el valor, no es posible cambiarlo. Se pide lo siguiente:
+Actualmente, una vez que ingresas tu presupuesto inicial, no hay forma de cambiarlo. ¡Vamos a agregar esta funcionalidad!
 
-- Agregar un botón "reiniciar", el cual deberá ser visible solo si ya se tiene el presupuesto asignado.
-- Una vez el botón sea presionado, la aplicación debe volver a su estado inicial, eliminando los gastos que se hayan ingresado hasta ese momento.
+Lo que necesitas hacer es:
 
-### Dividir para Vencer
+1. Agregar un botón "Reiniciar" que solo aparezca cuando ya existe un presupuesto ingresado
+2. Cuando se haga clic en el botón, la aplicación debe:
+   - Borrar todos los gastos registrados
+   - Permitir ingresar un nuevo presupuesto
+   - Volver al estado inicial de la aplicación
 
-En el mundo real, es habitual desarrollar una aplicación basada en varios componentes que colaboran entre si.
+### Reto 3: Crear un Componente para cada Gasto
 
-En este caso, es posible dividir la aplicación en varias partes. Para empezar, se podría crear un componente únicamente para mostrar un elemento "gasto".
+En Angular, una buena práctica es dividir nuestra aplicación en componentes más pequeños y reutilizables. Vamos a crear un componente específico para mostrar cada gasto individual.
 
-Para lograr este objetivo, tenemos que crear una carpeta llamada `gasto`.
+Sigue estos pasos:
 
-Dentro de dicha carpeta, se deberán crear los siguientes archivos: `gasto.component.html`, `gasto.component.ts`, `gasto.component.css`. Quedando el proyecto con la siguiente estructura de archivos:
+1. Crea una nueva carpeta llamada `gasto`
+2. Dentro de esta carpeta, crea tres archivos:
+   - `gasto.component.html`: Para el template HTML
+   - `gasto.component.ts`: Para la lógica del componente
+   - `gasto.component.css`: Para los estilos específicos del componente
+
+Tu estructura de archivos quedará así:
 
 ```txt
 |- src/
     - gasto/
-        - gasto.component.html
-        - gasto.component.ts
-        - gasto.component.css
+        - gasto.component.html    👈 Nuevo archivo para el HTML del gasto
+        - gasto.component.ts      👈 Nuevo archivo para la lógica del gasto
+        - gasto.component.css     👈 Nuevo archivo para los estilos del gasto
     - gasto.ts
     - global_styles.css
     - index.html
@@ -63,7 +70,7 @@ Dentro de dicha carpeta, se deberán crear los siguientes archivos: `gasto.compo
     - tsconfig.app.json
 ```
 
-El objetivo es "mover" el código relacionado a un item de la lista de gastos al nuevo componente. Es decir, el archivo `gasto.component.html` debería tener más o menos el siguiente código:
+En el archivo `gasto.component.html`, coloca el HTML para mostrar un solo gasto:
 
 ```html
 <li>
@@ -80,7 +87,7 @@ El objetivo es "mover" el código relacionado a un item de la lista de gastos al
 </li>
 ```
 
-Al mismo tiempo, el código TypeScript para el componente gasto estaría dado inicialmente como:
+En el archivo `gasto.component.ts`, crea el componente básico:
 
 ```ts
 import { Component } from '@angular/core';
@@ -88,55 +95,106 @@ import { Gasto } from '../gasto';
 
 @Component({
   selector: 'gasto',
-  standalone: true,
-  imports: [],
   templateUrl: 'gasto.component.html',
 })
-export class GastoComponent {}
+export class GastoComponent {
+  // Aquí agregaremos el Input para recibir el gasto
+  // y el Output para emitir el evento de eliminación
+}
 ```
 
-Lo cual significa que el nuevo componente `gasto` se encargará de la gestión de un único gasto. Será necesario definir un atributo para el [input](https://angular.dev/guide/components/inputs) y un método para el [output](https://angular.dev/guide/components/outputs)
-
-El componente inicial `main`, seguirá gestionando el conjunto de gastos y su plantilla debería cambiar a algo como lo siguiente:
+Finalmente, actualiza tu componente principal para usar el nuevo componente de gasto:
 
 ```html
 <div class="caja-lista">
   <ul>
-    <gasto
-      *ngFor="let gasto of gastos"
-      [gasto]="gasto"
-      (eliminar)="eliminarGasto($event)"
-    >
-    </gasto>
+    @for (gasto of gastos(); track $index) {
+    <gasto [gasto]="gasto" (eliminar)="eliminarGasto($event)" />
+    }
   </ul>
 </div>
 ```
 
-Observa que ahora el componente `main` hace uso del nuevo componente `gasto`. El método `eliminarGasto` deberá ser actualizado.
+💡 **Nota**: Para que esto funcione, necesitarás:
 
-### Explora el nuevo Control de Flujo
+- Usar `input` para que el componente gasto reciba la información del gasto
+- Usar `output` para emitir el evento cuando se quiera eliminar un gasto
+- Registrar el nuevo componente en tu módulo de Angular
 
-Angular v17 introduce el concepto de un nuevo control de Flujo para el manejo de plantillas.
+¡Inténtalo y no dudes en experimentar con más funcionalidades!
 
-La aplicación actual hace uso de las directivas `NgIf` y `NgFor`, las cuales se soportan en todas las versiones del framework.
+### Reto 4: Optimiza tus Signals con Computed
 
-Para hacer una migración automática debes abrir una nueva terminal en Stackblitz. Y a continuación ejecutar el siguiente comando:
+¡Vamos a hacer nuestra aplicación más eficiente! En Angular, los signals computed son una característica poderosa que nos permite calcular valores automáticamente basados en otros signals. Piensa en ellos como fórmulas en Excel que se actualizan automáticamente cuando cambian los valores de los que dependen.
 
-```bash
-ng generate @angular/core:control-flow
+Actualmente, tenemos estos signals en nuestra aplicación:
+
+```typescript
+nombreGasto = signal('chocolate');
+cantidadGasto = signal(10);
+gastos = signal<Gasto[]>([]);
+
+// Variables para el manejo del presupuesto
+presupuesto = signal(0);
+saldo = signal(0);
+saldoInicialIngresado = signal(false);
 ```
 
-Presiona la tecla `ENTER` en caso de que la terminal espere algún otro parámetro de entrada. Al terminar, la salida debería ser algo como:
+¿Te has dado cuenta que el `saldo` realmente depende del `presupuesto` y los `gastos`? En lugar de actualizarlo manualmente, podemos hacer que se calcule automáticamente usando un computed signal.
 
-```text
-❯ ng generate @angular/core:control-flow
-? Which path in your project should be migrated? ./
-? Should the migration reformat your templates? Yes
-    IMPORTANT! This migration is in developer preview. Use with caution.
-UPDATE src/main.html (2039 bytes)
-UPDATE src/main.ts (1444 bytes)
+Por ejemplo, podrías convertir el saldo en un computed signal así:
+
+```typescript
+saldo = computed(() => {
+  const presupuestoActual = this.presupuesto();
+  const totalGastos = this.gastos().reduce(
+    (total, gasto) => total + gasto.cantidad,
+    0,
+  );
+  return presupuestoActual - totalGastos;
+});
 ```
 
-Observa que se actualizaron dos archivos: `main.ts` y `main.html`. Revisa que cambios ocurrieron y experimenta el nuevo control de flujo.
+¡Inténtalo! Identifica qué otros valores en tu aplicación podrían ser computed signals.
 
-Aprende más sobre el nuevo control de flujo [aquí](https://angular.dev/guide/templates/control-flow).
+### Reto 5: Guarda tus Datos con localStorage
+
+¿Has notado que cada vez que recargas la página pierdes todos tus gastos? 😟 ¡Vamos a solucionarlo!
+
+El localStorage es como una pequeña base de datos en tu navegador que nos permite guardar información incluso después de cerrar la página. Combinando localStorage con signals y effects, podemos crear una experiencia perfecta donde los datos se guarden automáticamente.
+
+Así es como funciona:
+
+1. Primero, guardamos los datos cuando cambien usando un effect:
+
+```typescript
+effect(() => {
+  // Cada vez que gastos() cambie, se guardará en localStorage
+  localStorage.setItem('gastos', JSON.stringify(this.gastos()));
+});
+```
+
+2. Luego, cuando la aplicación inicie, cargamos los datos guardados:
+
+```typescript
+constructor() {
+  // Recuperamos los gastos guardados
+  const gastosGuardados = localStorage.getItem('gastos');
+  if (gastosGuardados) {
+    this.gastos.set(JSON.parse(gastosGuardados));
+  }
+}
+```
+
+Retos adicionales para localStorage:
+
+- Guarda también el presupuesto inicial
+- Agrega una función para borrar todos los datos guardados cuando se usa el botón de reinicio
+- Muestra un mensaje cuando se cargan datos guardados
+- Agrega un botón para exportar los datos a un archivo JSON
+
+💡 **Tip**: Recuerda manejar los casos donde localStorage no esté disponible o los datos guardados no sean válidos.
+
+¡Ahora tu aplicación mantendrá los datos incluso después de cerrar el navegador! 🎉
+
+¿Te animas a implementar estas mejoras? Recuerda que la práctica hace al maestro. No dudes en experimentar y agregar tus propias características a la aplicación.

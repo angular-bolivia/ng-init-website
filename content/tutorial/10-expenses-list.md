@@ -1,21 +1,21 @@
 ---
 title: Lista de gastos
 author: Angular Bolivia
-description: En la variable gastos se encuentran todos los gastos guardados que el usuario está creando, ahora llego el punto de mostrarlos en pantalla.
+description: Aprenderemos a mostrar en pantalla la lista de gastos que el usuario va registrando, usando las características modernas de Angular.
 order: 10
 prevStep: '09-add-expenses'
 nextStep: '11-budget'
 ---
 
-# Mostrando los gastos
+# Mostrando la Lista de Gastos
 
-> En la variable `gastos` se encuentran todos los gastos guardados que el usuario está creando, ahora llego el punto de mostrarlos en pantalla.
+> ¡Excelente progreso! Ya aprendimos a guardar los gastos en nuestra aplicación. Ahora vamos a dar el siguiente paso: mostrar estos gastos en pantalla para que los usuarios puedan ver todos sus registros de una forma bonita y ordenada.
 
 ---
 
-## Paso #1
+## Paso #1: Creando la estructura HTML base
 
-Lo primero que vamos hacer es crear la estructura HTML para mostrar los gastos. Será así:
+Para empezar, vamos a crear una estructura HTML básica que nos servirá para mostrar los gastos. Primero, hagamos un ejemplo sencillo con datos ficticios para visualizar cómo queremos que se vea:
 
 ```html
 <div class="contenedor-lista">
@@ -38,10 +38,17 @@ Lo primero que vamos hacer es crear la estructura HTML para mostrar los gastos. 
 </div>
 ```
 
-Lo vamos agregar a toda nuestra plantilla:
+Esta estructura es muy simple:
+
+- Usamos un `<div>` principal como contenedor
+- Dentro tenemos una lista `<ul>` que contendrá cada gasto
+- Cada gasto será un elemento `<li>` con el nombre y la cantidad
+
+Ahora, vamos a unir esta nueva estructura con nuestro formulario que ya teníamos. Así es como quedará todo junto:
 
 ```html
 <div class="contenedor-principal">
+  <!-- Esta es la parte del formulario que ya teníamos -->
   <div class="form gasto">
     <h3>Agrega tus gastos aquí</h3>
     <div>
@@ -65,6 +72,7 @@ Lo vamos agregar a toda nuestra plantilla:
     <button (click)="agregarGasto()">Listo</button>
   </div>
 
+  <!-- Esta es la nueva parte que agregamos para mostrar la lista -->
   <div class="contenedor-lista">
     <div class="caja-lista">
       <ul>
@@ -86,46 +94,49 @@ Lo vamos agregar a toda nuestra plantilla:
 </div>
 ```
 
-El resultado debe ser:
+Cuando guardes estos cambios, verás algo como esto en tu pantalla:
 
 ![Lista de gastos estática inicial](/images/tutorial/template-3.png)
 
-</div>
+## Paso #2: Haciendo la lista dinámica
 
-## Paso #2
+¡Ahora viene la parte emocionante! En lugar de mostrar datos fijos como "Chocolates" y "Pan", vamos a hacer que nuestra lista muestre los gastos reales que el usuario va agregando. Para esto, usaremos una característica muy especial de Angular llamada **@for**.
 
-Como ves, en la aplicación se muestra una lista de gastos, pero es una lista estática. Debemos lograr que se muestre dinámicamente según los gastos guardados en la variable `gastos`.
+¿Qué es **@for**?
+Es una directiva de Angular que nos permite repetir elementos HTML por cada dato que tengamos en una lista. Es como decirle a Angular: "Por favor, crea un elemento `<li>` por cada gasto que encuentres en mi lista de gastos".
 
-Para lograr esto, Angular nos provee la directiva **ngFor**, capaz de hacer una repetición de elementos dentro de la página. Esta repetición nos permite recorrer una estructura de array y para cada uno de sus elementos replicar una cantidad de elementos en el HTML.
-
-En nuestro caso para mostrar todas los gastos vamos a modificar el elemento `li` y aplicar un **ngFor**.
+Vamos a modificar nuestro código para usar **@for**:
 
 ```html
-<li *ngFor="let gasto of gastos">
+@for (gasto of gastos(); track $index) {
+<li>
   <p>{{gasto.nombre}}</p>
   <div>
     <span>{{gasto.cantidad}} Bs</span>
   </div>
 </li>
+}
 ```
 
-Si el código no funciona, se debe a que la directiva `NgFor` aún no ha sido importada en el componente. En tal caso debes revisar la salida que se tiene en la terminal.
+Analicemos cada parte de este código:
 
-Asegúrate de importar la directiva usando el siguiente código en la parte superior del archivo `main.ts`:
+1. `@for (gasto of gastos(); track $index)`:
 
-```ts
-import { NgFor } from '@angular/common';
-```
+   - Esta línea le dice a Angular que recorra nuestra lista de `gastos`
+   - Por cada gasto, creará una variable temporal llamada `gasto` que podremos usar
+   - `track $index` ayuda a Angular a mantener un registro de cada elemento
 
-Posteriormente, debes actualizar el atributo `imports` en la definición del componente:
+2. `{{gasto.nombre}}` y `{{gasto.cantidad}}`:
+   - Los símbolos `{{}}` son la forma que tiene Angular de mostrar datos dinámicos
+   - Dentro de estos símbolos podemos poner cualquier variable o expresión
+   - En este caso, mostramos el nombre y la cantidad de cada gasto
 
-```ts
-@Component({
-  ...
-  imports: [FormsModule, NgFor],
-  ...
-})
-export class App {
-```
+## Paso #3: ¡Hora de probar!
 
-![Lista de gastos dinámica inicial](/images/tutorial/template-4.png)
+Ahora que tenemos todo conectado, cada vez que agregues un nuevo gasto usando el formulario:
+
+1. El gasto se guardará en nuestra lista de `gastos`
+2. Angular automáticamente actualizará la pantalla
+3. Verás el nuevo gasto aparecer en la lista
+
+¡Pruébalo! Agrega algunos gastos y observa cómo la lista se actualiza automáticamente. Esta es la magia de Angular: mantener sincronizados tus datos con lo que se muestra en pantalla.
