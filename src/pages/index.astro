@@ -4,6 +4,7 @@ import HeroComponent from '@components/hero.component';
 import MentorsComponent from '@components/mentors.component';
 import BlogComponent from '@components/blog/blog.component';
 import Layout from '@layout/Layout.astro';
+import SponsorsComponent from '@components/sponsors.component';
 ---
 
 <Layout>
@@ -12,5 +13,6 @@ import Layout from '@layout/Layout.astro';
     <AboutUsComponent client:visible />
     <MentorsComponent client:visible />
     <BlogComponent client:visible />
+    <SponsorsComponent client:visible />
   </main>
 </Layout>
