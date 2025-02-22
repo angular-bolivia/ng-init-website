@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layout/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  return posts.map((post: any) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await (post as any).render();
+---
+
+<Layout>
+  <main>
+    <article class="markdown-content">
+      <Content />
+    </article>
+  </main>
+</Layout>
+
+<style>
+  body {
+    background-color: #111828;
+    color: white;
+  }
+
+  article {
+    all: revert;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    margin: auto;
+    max-width: 46rem;
+    padding: 120px 10px 40px;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 50px 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 30px 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+  }
+</style>

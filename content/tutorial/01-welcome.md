@@ -6,7 +6,7 @@ order: 1
 nextStep: '02-angular'
 ---
 
-# ¡Bienvenida a ngInit!
+# ¡Bienvenido a NG | INIT!
 
 > Primero que nada, nos alegra mucho tenerte aquí, nuestra misión es ayudarte a que te sientas cómod@ todo el tiempo. Si en algún momento necesitas ayuda no dudes en buscarnos, estamos aquí para ti.
 

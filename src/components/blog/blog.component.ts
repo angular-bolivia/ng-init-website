@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import CardBlogComponent from './card-blog.component';
 import CodeOfConductImg from '@assets/images/code-of-conduct.webp';
+import TutorialImg from '@assets/images/community-photo.webp';
 import PromptIcon from '@assets/icons/prompt-icon.svg';
 
 @Component({
-  selector: 'app-blog-component',
+  selector: 'app-blog',
   standalone: true,
   imports: [CardBlogComponent],
   template: `
@@ -21,26 +22,37 @@ import PromptIcon from '@assets/icons/prompt-icon.svg';
       <section
         class="flex flex-col md:flex-row gap-8 px-4 justify-center items-center md:px-8"
       >
-        <app-card-blog
-          [title]="CODE_OF_CONDUCT"
-          [content]="CODE_OF_CONDUCT_CONTENT"
-          [date]="CODE_OF_CONDUCT_DATE"
-          [image]="CODE_OF_CONDUCT_IMAGE"
-          [time]="CODE_OF_CONDUCT_TIME"
-          [link]="CODE_OF_CONDUCT_LINK"
-        ></app-card-blog>
+        @for (article of articles; track article.title) {
+          <app-card-blog
+            [title]="article.title"
+            [content]="article.content"
+            [date]="article.date"
+            [image]="article.image"
+            [link]="article.link"
+          ></app-card-blog>
+        }
       </section>
     </article>
   `,
 })
 export default class BlogComponent {
-  protected readonly TITLE: string = 'Blog';
-  protected readonly CODE_OF_CONDUCT: string = 'Código de conducta';
-  protected readonly CODE_OF_CONDUCT_CONTENT: string =
-    'Explora el código de conducta del día del evento.';
-  protected readonly CODE_OF_CONDUCT_DATE: string = '3/2/2025';
-  protected readonly CODE_OF_CONDUCT_IMAGE: string = CodeOfConductImg.src;
-  protected readonly CODE_OF_CONDUCT_TIME: string = '7 min read';
-  protected readonly PROMPT_ICON_IMG: string = PromptIcon.src;
-  protected readonly CODE_OF_CONDUCT_LINK: string = '/blogs/code-of-conduct';
+  protected readonly TITLE = 'Blog';
+  protected readonly PROMPT_ICON_IMG = PromptIcon.src;
+
+  protected readonly articles = [
+    {
+      title: 'Tutorial',
+      content: 'Da inicio al workshop del NG | INIT.',
+      date: '22/2/2025',
+      image: TutorialImg.src,
+      link: '/tutorial/01-welcome',
+    },
+    {
+      title: 'Código de conducta',
+      content: 'Explora el código de conducta del día del evento.',
+      date: '3/2/2025',
+      image: CodeOfConductImg.src,
+      link: '/posts/code-of-conduct',
+    },
+  ];
 }
