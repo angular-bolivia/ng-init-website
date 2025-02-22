@@ -8,10 +8,9 @@ import HeroImg from '@assets/images/hero.webp';
   standalone: true,
   template: `
     <article
+      id="home"
       class="h-dvh min-h-[600px] p-4 md:p-8 bg-cover bg-center bg-no-repeat relative after:content-[''] after:absolute after:inset-0 after:z-[1] after:bg-gradient-to-b after:from-[rgba(107,9,141,0.8)] after:via-[rgba(0,31,33,0.6)] after:to-[rgba(3,24,57,0.7)]"
-      [style]="{
-        backgroundImage: 'url(' + HERO_IMG + ')',
-      }"
+      [style]="{ backgroundImage: 'url(' + HERO_IMG + ')' }"
     >
       <section
         class="relative z-[2] bg-no-repeat bg-cover bg-center h-full flex flex-col justify-center"
