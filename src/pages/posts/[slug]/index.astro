@@ -5,7 +5,7 @@ import Layout from '@layout/Layout.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
 
-  return posts.map((post) => ({
+  return posts.map((post: any) => ({
     params: { slug: post.slug },
     props: { post },
   }));
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 
-const { Content } = await post.render();
+const { Content } = await (post as any).render();
 ---
 
 <Layout>
@@ -38,7 +38,7 @@ const { Content } = await post.render();
     justify-content: center;
     margin: auto;
     max-width: 46rem;
-    padding: 40px 10px;
+    padding: 120px 10px 40px;
 
     h1 {
       font-size: 2.5rem;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import CardBlogComponent from './card-blog.component';
 import CodeOfConductImg from '@assets/images/code-of-conduct.webp';
+import TutorialImg from '@assets/images/community-photo.webp';
 import PromptIcon from '@assets/icons/prompt-icon.svg';
 
 @Component({
@@ -40,11 +41,18 @@ export default class BlogComponent {
 
   protected readonly articles = [
     {
+      title: 'Tutorial',
+      content: 'Da inicio al workshop del NG | INIT.',
+      date: '22/2/2025',
+      image: TutorialImg.src,
+      link: '/tutorial/01-welcome',
+    },
+    {
       title: 'Código de conducta',
       content: 'Explora el código de conducta del día del evento.',
       date: '3/2/2025',
       image: CodeOfConductImg.src,
-      link: 'code-of-conduct',
+      link: '/posts/code-of-conduct',
     },
   ];
 }

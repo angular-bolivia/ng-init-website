@@ -1,7 +1,6 @@
 ---
 title: 'Tutorial - Bienvenida'
 author: 'Angular Bolivia'
-publishDate: 2025-02-18T00:00:00.000Z
 description: Código de conducta para el evento NG INIT.
 published: true
 slug: code-of-conduct

@@ -8,7 +8,7 @@ import TimeIcon from '@assets/icons/time-icon.svg';
   template: `
     <a
       class="flex flex-col max-w-[393px] h-[360px] rounded-xl overflow-hidden border-[#414142] border-2"
-      [href]="'/posts/' + link()"
+      [href]="link()"
     >
       <img class="h-[55%]" [src]="image()" [alt]="title()" />
       <div
