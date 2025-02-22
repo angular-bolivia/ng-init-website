@@ -5,7 +5,6 @@ import MentorsComponent from '@components/mentors.component';
 import BlogComponent from '@components/blog/blog.component';
 import Layout from '@layout/Layout.astro';
 import SponsorsComponent from '@components/sponsors.component';
-import { FooterComponent } from '@components/footer.component';
 ---
 
 <Layout>
@@ -15,6 +14,5 @@ import { FooterComponent } from '@components/footer.component';
     <MentorsComponent client:visible />
     <BlogComponent client:visible />
     <SponsorsComponent client:visible />
-    <FooterComponent client:visible />
   </main>
 </Layout>
