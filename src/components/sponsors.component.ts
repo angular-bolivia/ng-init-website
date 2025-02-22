@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import CatolicaUniversityLogo from '@assets/images/sponsors/universidad-catolica-logo.webp';
+import UCatolica from '@assets/images/sponsors/u-catolica.webp';
+import Wolipay from '@assets/images/sponsors/wolipay.webp';
 
 @Component({
   selector: 'app-sponsors',
@@ -36,8 +37,13 @@ export default class SponsorsComponent {
 
   protected readonly SPONSORS = [
     {
+      name: 'Wolipay',
+      logo: Wolipay.src,
+      url: 'https://wolipay.bo/',
+    },
+    {
       name: 'Universidad Católica Boliviana',
-      logo: CatolicaUniversityLogo.src,
+      logo: UCatolica.src,
       url: 'https://www.ucb.edu.bo/',
     },
   ];

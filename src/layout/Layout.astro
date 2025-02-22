@@ -1,7 +1,8 @@
 ---
 import NavbarComponent from '@components/navbar.component';
-import '@styles/global.css';
 import FooterComponent from '@components/footer.component';
+
+import '@styles/global.css';
 ---
 
 <!doctype html>
@@ -30,7 +31,7 @@ import FooterComponent from '@components/footer.component';
     <meta name="generator" content={Astro.generator} />
   </head>
   <body>
-    <NavbarComponent client:load />
+    <NavbarComponent client:visible />
     <slot />
     <FooterComponent client:visible />
   </body>

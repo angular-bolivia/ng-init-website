@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  signal,
-  viewChild,
-  type WritableSignal,
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NavbarScrollDirective } from '../directives/navbar-scroll.directive';
 
@@ -27,27 +21,17 @@ import AngularLogo from '@assets/images/angular-white-logo.webp';
 
       <section class="hidden md:flex md:items-center gap-16 text-white">
         <a
-          class="cursor-pointer border-b-[3px] border-transparent"
-          [class.active]="selectedTab() === 0"
-          (click)="scrollToTab(0)"
+          class="cursor-pointer border-b-[3px] border-transparent hover:border-[#f9e76a]"
+          href="#home"
         >
           Inicio
         </a>
 
         <a
-          class="cursor-pointer border-b-[3px] border-transparent"
-          [class.active]="selectedTab() === 1"
-          (click)="scrollToTab(1)"
+          class="cursor-pointer border-b-[3px] border-transparent hover:border-[#f9e76a]"
+          href="#blog"
         >
           Blog
-        </a>
-
-        <a
-          class="cursor-pointer border-b-[3px] border-transparent"
-          [class.active]="selectedTab() === 2"
-          (click)="scrollToTab(2)"
-        >
-          Equipo
         </a>
       </section>
 
@@ -74,11 +58,9 @@ import AngularLogo from '@assets/images/angular-white-logo.webp';
           </div>
 
           <section class="flex flex-col gap-4 text-white">
-            <a class="text-sm w-full" (click)="scrollToTab(0)"> Inicio </a>
+            <a class="text-sm w-full" href="#home"> Inicio </a>
 
-            <a class="text-sm w-full" (click)="scrollToTab(1)"> Blog </a>
-
-            <a class="text-sm w-full" (click)="scrollToTab(2)"> Equipo </a>
+            <a class="text-sm w-full" href="#blog"> Blog </a>
           </section>
         </section>
       </section>
@@ -90,30 +72,8 @@ import AngularLogo from '@assets/images/angular-white-logo.webp';
       flex-direction: column;
       gap: 1rem;
     }
-
-    .active {
-      border-bottom: 3px solid #f9e76a;
-    }
   `,
 })
 export default class NavbarComponent {
-  protected menuToggle = viewChild.required<ElementRef>('menuToggle');
-  protected navbar = viewChild.required<ElementRef>('navbar');
-
-  protected selectedTab: WritableSignal<number>;
   protected readonly ANGULAR_LOGO = AngularLogo.src;
-  protected readonly TABS = ['', 'blog', 'team'];
-
-  constructor() {
-    this.selectedTab = signal(0);
-  }
-
-  public scrollToTab(tab: number): void {
-    this.selectedTab.set(tab);
-    location.hash = this.TABS[tab];
-
-    if (this.menuToggle) {
-      this.menuToggle().nativeElement.checked = false;
-    }
-  }
 }
